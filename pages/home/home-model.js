@@ -8,7 +8,7 @@ class Home extends Base{
     var params={
       url:'banner/'+id,
       sCallBack:function(res){
-        callBack && callBack(res);
+        callBack && callBack(res.items);
       }
 
     }

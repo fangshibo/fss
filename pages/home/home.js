@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+  // 'bannerArr':""
   },
 
 onLoad:function(){
@@ -18,7 +18,12 @@ onLoad:function(){
 _loadData:function(){
   var id=1;
   var data=home.getBannerData(id,(res)=>{
-    console.log(res);
+    console.log(res[0].img.url);
+    
+    this.setData({
+      'bannerArr':res
+      
+    })
   });
 
   

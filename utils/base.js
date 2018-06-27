@@ -22,7 +22,7 @@ class Base{
       },
       success: function (res) {
           if (params.sCallBack) {
-             params.sCallBack(res);
+             params.sCallBack(res.data);
          }
         // console.log(res);
         // params.sCallBack && params.sCallBack(res);
