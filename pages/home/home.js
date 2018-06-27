@@ -17,20 +17,24 @@ onLoad:function(){
 },
 _loadData:function(){
   var id=1;
-  var data=home.getBannerData(id,(res)=>{
-    console.log(res[0].img.url);
+  home.getBannerData(id,(res)=>{
+    // console.log(res[0].img.url);
     
     this.setData({
       'bannerArr':res
       
     })
   });
+  home.getThemeData(id,(res)=>{
+    console.log(res);
+    this.setData({
+      'themeArr': res
+    })
+  })
 
   
 },
-// callBack:function(res){
-//   console.log(res);
-// }
+
 
   
 })

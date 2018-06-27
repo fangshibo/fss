@@ -4,24 +4,29 @@ class Home extends Base{
  constructor(){
    super();
   }
-  getBannerData(id,callBack){
+  getBannerData(id,callback){
     var params={
       url:'banner/'+id,
-      sCallBack:function(res){
-        callBack && callBack(res.items);
+      sCallback:function(res){
+        callback && callback(res.items);
       }
 
     }
     this.request(params);
-    // wx.request({
-    //   url: 'https://fsb.nn888.xyz/public/api/v1/banner/'+id,
-    //   method:'GET',
-    //   success:function(res){
-        
-    //    callBack(res);
-        
-    //   }
-    // })
+   
+  };
+  /*首页主题*/
+  getThemeData(id, callback) {
+    var params = {
+      url: 'theme?ids=1,2,3',
+      sCallback: function (data) {
+        callback && callback(data);
+      }
+
+    }
+    this.request(params);
+
   }
+
 }
 export {Home};
